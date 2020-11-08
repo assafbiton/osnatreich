@@ -1,0 +1,12 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ISeoConfig>
+
+   
+
+
+<title>@Model.SeoPageTitle</title>
+<meta name="description" content="@Model.SeoPageDescription" />
+<meta name="keywords" content="@string.Join(", ", Model.SeoKeyWords) " />
+@if (Model.IndexNoFollow)
+{
+    <meta name="robots" content="noindex" />
+}
