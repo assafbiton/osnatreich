@@ -1,59 +1,50 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<HomePage>
+@{
+    var dataloop = Model.SwiperSlider.Count() > 1 ? true : false;
+    var dataAutoplay = Model.SwiperSlider.Count() > 1 ? "5500" : "false";
+}
 
 <section class="swiper-panel-wrap">
-    <div class="swiper-container swiper-slider swiper-slider_fullheight swiper-slider_nav-responsive" data-simulate-touch="false" data-loop="true" data-autoplay="5500">
+    <div class="swiper-container swiper-slider swiper-slider_fullheight swiper-slider_nav-responsive" data-simulate-touch="false" data-loop="@dataloop" data-autoplay="@dataAutoplay">
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide bg-accent-2" data-slide-bg="../images/slider-1-slide-1-1920x980.jpg">
-                <div class="swiper-slide-caption text-center">
-                    <div class="container">
-                        <div class="row justify-content-lg-center">
-                            <div class="col-lg-10 col-xxl-8">
-                                <h3 class="heading-decorated" data-caption-animate="fadeInUpSmall">Professional Lawyer</h3>
-                                <h1 data-caption-animate="fadeInUpSmall" data-caption-delay="200">Osnat Reich</h1>
-                                <div class="group-lg group-middle"><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="about-us.html">MORE INFO</a></div>
+            @foreach (var item in Model.SwiperSlider)
+            {
+                <div class="swiper-slide bg-accent-2" data-slide-bg="@Html.Raw(item.BackgroundImage != null ? item.BackgroundImage.GetCropUrl() : "../images/slider-1-slide-1-1920x980.jpg")">
+                    <div class="swiper-slide-caption text-center">
+                        <div class="container">
+                            <div class="row justify-content-lg-center">
+                                <div class="col-lg-10 col-xxl-8">
+                                    <h3 class="heading-decorated" data-caption-animate="fadeInUpSmall">@Html.Raw(item.Title)</h3>
+                                    <h1 data-caption-animate="fadeInUpSmall" data-caption-delay="200">@Html.Raw(item.TextDescription)</h1>
+                                    @if (item.IsButtonActive)
+                                    {
+                                        if (item.ButtonLink!=null)
+                                        {
+                                            <div class="group-lg group-middle"><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="about-us.html">@item.ButtonLink.Name</a></div>
+
+
+                                        }
+
+                                    }
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="swiper-slide bg-accent-2" data-slide-bg="../images/slider-1-slide-2-1920x980.jpg">
-                <div class="swiper-slide-caption text-center">
-                    <div class="container">
-                        <div class="row justify-content-lg-center">
-                            <div class="col-lg-10 col-xxl-8">
-                                <h3 class="heading-decorated" data-caption-animate="fadeInUpSmall">We're Always Available for Customers with <br class="d-none d-md-block"> Emergent Lawyer Problems.</h3>
-                                <p data-caption-animate="fadeInUpSmall" data-caption-delay="200">You can easily reach us 24/7 via the phone number below:</p>
-                                <dl class="list-terms-inline heading-2" data-caption-animate="fadeInUpSmall" data-caption-delay="350">
-                                    <dt>Tel </dt>
-                                    <dd><a href="callto:#">1.555.123.2323</a></dd>
-                                </dl>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide bg-accent-2" data-slide-bg="../images/slider-1-slide-3-1920x980.jpg">
-                <div class="swiper-slide-caption text-center">
-                    <div class="container">
-                        <div class="row justify-content-lg-center">
-                            <div class="col-lg-10 col-xxl-8">
-                                <h2 class="heading-decorated" data-caption-animate="fadeInUpSmall">Appointment</h2>
-                                <p data-caption-animate="fadeInUpSmall" data-caption-delay="200">Booking an appointment at our law firm is as easy as it gets... </p>
-                                <p data-caption-animate="fadeInUpSmall" data-caption-delay="200">You will be able to schedule a convenient time for your meeting with our lawyers with just 2 clicks!</p>
-                                <div class="group-lg group-middle"><a class="button button-primary" data-caption-animate="fadeInUpSmall" data-caption-delay="350" href="book-an-appointment.html">BOOK AN APPOINTMENT</a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            }
 
         </div>
         <!-- Swiper Pagination-->
         <div class="swiper-pagination"></div>
-        <!-- Swiper Navigation-->
-        <div class="swiper-button-prev linear-icon-chevron-left"></div>
-        <div class="swiper-button-next linear-icon-chevron-right"></div>
+        @if (dataloop)
+        {
+            <!-- Swiper Navigation-->
+            <div class="swiper-button-prev linear-icon-chevron-left"></div>
+            <div class="swiper-button-next linear-icon-chevron-right"></div>
+        }
+
+
     </div>
     <div class="swiper-panel section-sm bg-accent-2">
         <div class="container">

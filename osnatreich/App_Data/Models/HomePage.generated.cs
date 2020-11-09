@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>דף הבית</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IHpWellcom, ISeoConfig, ISwiperSlider
+	public partial class HomePage : PublishedContentModel, IHpWellcom, ISeoConfig
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -46,11 +46,46 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// niceimage
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("niceimage")]
+		public IPublishedContent Niceimage => this.Value<IPublishedContent>("niceimage");
+
+		///<summary>
+		/// לוגו אתר: לוגו אתר
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("siteLogo")]
+		public IPublishedContent SiteLogo => this.Value<IPublishedContent>("siteLogo");
+
+		///<summary>
+		/// שם האתר: שם האתר
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("siteName")]
+		public string SiteName => this.Value<string>("siteName");
+
+		///<summary>
+		/// socialIcons: סמלים חברתיים
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("socialIcons")]
+		public IEnumerable<SocialIcons> SocialIcons => this.Value<IEnumerable<SocialIcons>>("socialIcons");
+
+		///<summary>
 		/// swiper-slider: באנר מתחלף
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("swiperSlider")]
 		public IEnumerable<SwiperSlider> SwiperSlider => this.Value<IEnumerable<SwiperSlider>>("swiperSlider");
+
+		///<summary>
+		/// הצג רכיב: הצג רכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("showHpWellcom")]
+		public bool ShowHpWellcom => HpWellcom.GetShowHpWellcom(this);
 
 		///<summary>
 		/// Welcome Text: Welcome Text
@@ -86,26 +121,5 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("seoPageTitle")]
 		public string SeoPageTitle => SeoConfig.GetSeoPageTitle(this);
-
-		///<summary>
-		/// תמונת רקע: תמונת רקע
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		[ImplementPropertyType("backgroundImage")]
-		public IPublishedContent BackgroundImage => SwiperSlider.GetBackgroundImage(this);
-
-		///<summary>
-		/// טקסט הבאנר: טקסט הבאנר
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		[ImplementPropertyType("textDescription")]
-		public IHtmlString TextDescription => SwiperSlider.GetTextDescription(this);
-
-		///<summary>
-		/// כותרת באנר: כותרת באנר
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		[ImplementPropertyType("title")]
-		public string Title => SwiperSlider.GetTitle(this);
 	}
 }

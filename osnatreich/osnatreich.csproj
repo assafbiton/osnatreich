@@ -407,6 +407,12 @@
   <ItemGroup>
     <Content Include="App_Data\TEMP\ClientDependency\DESKTOP-JA4NIDB-f8a42db51a8d0f59ae85884d91c65cd5-map.xml" />
     <Content Include="App_Data\TEMP\DistCache\LMW3SVC2ROOT-lastsynced.txt" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.controller.js" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.css" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.html" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.manager.js" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.node.js" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.trie.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.html" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -576,6 +582,8 @@
     <Content Include="Content\bootstrap-reboot.css.map" />
     <Content Include="Content\bootstrap-grid.min.css.map" />
     <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\icons.json" />
+    <Content Include="App_Plugins\FontAwesomeIconFinder\package.manifest" />
     <None Include="scripts\jquery-3.0.0-vsdoc.js" />
     <Content Include="scripts\jquery-3.0.0.js" />
     <Content Include="scripts\jquery-3.0.0.min.js" />
@@ -3086,6 +3094,7 @@
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\SeoConfig.generated.cs" />
+    <Compile Include="App_Data\Models\SocialIcons.generated.cs" />
     <Compile Include="App_Data\Models\SwiperSlider.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -3259,6 +3268,15 @@
     <Content Include="Views\Partials\HP\_HPswiperSlider.cshtml" />
     <Content Include="Views\Partials\_seoConfig.cshtml" />
     <Content Include="Views\hpWellcom.cshtml" />
+    <Content Include="Views\Partials\HP\_HPwellcom.cshtml" />
+    <Content Include="Views\Partials\HP\_socialIcons.cshtml" />
+    <Content Include="Views\Partials\_topNavigation.cshtml" />
+    <Content Include="Views\Partials\HP\_ClientsTestimonials.cshtml" />
+    <Content Include="Views\Partials\HP\_DistinctiveRecognition.cshtml" />
+    <Content Include="Views\Partials\HP\_FeaturedNews.cshtml" />
+    <Content Include="Views\Partials\HP\_LegalPracticeAreas.cshtml" />
+    <Content Include="Views\Partials\HP\_SignUp.cshtml" />
+    <Content Include="Views\Partials\HP\_SomeOfOurClients.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

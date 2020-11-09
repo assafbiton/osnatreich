@@ -24,6 +24,10 @@ namespace Umbraco.Web.PublishedModels
 	/// <summary>טקסט ברוכים הבאים</summary>
 	public partial interface IHpWellcom : IPublishedContent
 	{
+		/// <summary>הצג רכיב</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		bool ShowHpWellcom { get; }
+
 		/// <summary>Welcome Text</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		IHtmlString WelcomeText { get; }
@@ -53,6 +57,17 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// הצג רכיב: הצג רכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("showHpWellcom")]
+		public bool ShowHpWellcom => GetShowHpWellcom(this);
+
+		/// <summary>Static getter for הצג רכיב</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		public static bool GetShowHpWellcom(IHpWellcom that) => that.Value<bool>("showHpWellcom");
 
 		///<summary>
 		/// Welcome Text: Welcome Text

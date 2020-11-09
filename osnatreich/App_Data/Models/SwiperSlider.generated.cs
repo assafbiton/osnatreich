@@ -20,26 +20,9 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedModels
 {
-	// Mixin Content Type with alias "swiperSlider"
-	/// <summary>באנר מתחלף</summary>
-	public partial interface ISwiperSlider : IPublishedElement
-	{
-		/// <summary>תמונת רקע</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		IPublishedContent BackgroundImage { get; }
-
-		/// <summary>טקסט הבאנר</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		IHtmlString TextDescription { get; }
-
-		/// <summary>כותרת באנר</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		string Title { get; }
-	}
-
 	/// <summary>באנר מתחלף</summary>
 	[PublishedModel("swiperSlider")]
-	public partial class SwiperSlider : PublishedElementModel, ISwiperSlider
+	public partial class SwiperSlider : PublishedElementModel
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -67,32 +50,34 @@ namespace Umbraco.Web.PublishedModels
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("backgroundImage")]
-		public IPublishedContent BackgroundImage => GetBackgroundImage(this);
+		public IPublishedContent BackgroundImage => this.Value<IPublishedContent>("backgroundImage");
 
-		/// <summary>Static getter for תמונת רקע</summary>
+		///<summary>
+		/// קישור לכפתור: קישור לכפתור
+		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		public static IPublishedContent GetBackgroundImage(ISwiperSlider that) => that.Value<IPublishedContent>("backgroundImage");
+		[ImplementPropertyType("buttonLink")]
+		public Umbraco.Web.Models.Link ButtonLink => this.Value<Umbraco.Web.Models.Link>("buttonLink");
+
+		///<summary>
+		/// האם להציג כפתור: האם להציג כפתור
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("isButtonActive")]
+		public bool IsButtonActive => this.Value<bool>("isButtonActive");
 
 		///<summary>
 		/// טקסט הבאנר: טקסט הבאנר
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("textDescription")]
-		public IHtmlString TextDescription => GetTextDescription(this);
-
-		/// <summary>Static getter for טקסט הבאנר</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		public static IHtmlString GetTextDescription(ISwiperSlider that) => that.Value<IHtmlString>("textDescription");
+		public IHtmlString TextDescription => this.Value<IHtmlString>("textDescription");
 
 		///<summary>
 		/// כותרת באנר: כותרת באנר
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("title")]
-		public string Title => GetTitle(this);
-
-		/// <summary>Static getter for כותרת באנר</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		public static string GetTitle(ISwiperSlider that) => that.Value<string>("title");
+		public string Title => this.Value<string>("title");
 	}
 }

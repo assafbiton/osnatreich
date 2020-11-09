@@ -1,0 +1,9 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<HomePage>
+
+<ul class="list-inline-xxs">
+    @foreach (var item in Model.SocialIcons)
+    {
+        
+        <li><a class="icon icon-xxs icon-primary @item.SocialIcon" href="#"></a></li>
+    }
+</ul>
