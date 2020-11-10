@@ -46,13 +46,6 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
-		/// niceimage
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
-		[ImplementPropertyType("niceimage")]
-		public IPublishedContent Niceimage => this.Value<IPublishedContent>("niceimage");
-
-		///<summary>
 		/// לוגו אתר: לוגו אתר
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]

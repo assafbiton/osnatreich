@@ -149,58 +149,10 @@
         </section>
 
         <!-- Our Legal Practice Areas-->
-        <section class="section-lg bg-default text-center">
-            <div class="container">
-                <div class="row justify-content-lg-center">
-                    <div class="col-lg-10 col-xl-8">
-                        <h3 class="heading-decorated">Our Legal Practice Areas:</h3>
-                    </div>
-                </div>
-                <ul class="list-indexed">
-                    <li>
-                        <div class="list-indexed__index"></div>
-                        <h5 class="list-indexed__title"><a href="single-practice.html">Labor & Employment Law</a></h5>
-                        <p>We'll be glad to deal with any kind of employment litigation issues, such as unlawful termination, wage hack or discrimination of any kind, which you might have encountered at your workplace...</p>
-                    </li>
-                    <li>
-                        <div class="list-indexed__index"></div>
-                        <h5 class="list-indexed__title"><a href="single-practice.html">Real Estate Law</a></h5>
-                        <p>The real property market nuances and the laws regulating it (such as estate taxing, e.g.) are one of our biggest field of work. We will be protecting your best interest whatever the case is!</p>
-                    </li>
-                    <li>
-                        <div class="list-indexed__index"></div>
-                        <h5 class="list-indexed__title"><a href="single-practice.html">Personal Injury</a></h5>
-                        <p>We're working with personal injuries, which are basically minor wrongful conduct torts, thus being out of the criminal hearings reach. We will become your defenders in any of  such civil litigations cases!</p>
-                    </li>
-                    <li>
-                        <div class="list-indexed__index"></div>
-                        <h5 class="list-indexed__title"><a href="single-practice.html">Business Litigation & Arbitration</a></h5>
-                        <p>We'll be glad to deal with any kind of employment litigation issues, such as unlawful termination, wage hack or discrimination of any kind, which you might have encountered at your workplace...</p>
-                    </li>
-                    <li>
-                        <div class="list-indexed__index"></div>
-                        <h5 class="list-indexed__title"><a href="single-practice.html">Insurance Law</a></h5>
-                        <p>The insurance marketplace has a lot of restrictions and limitations, which the insurance companies oftentimes try to use as the loopholes for getting away with not paying you. We will change that!</p>
-                    </li>
-                    <li>
-                        <div class="list-indexed__index"></div>
-                        <h5 class="list-indexed__title"><a href="single-practice.html">Mergers & Acquisitions</a></h5>
-                        <p>The commercial world of mergers & acquisitions is a harsh one. You'd better have a just as harsh team of sharky lawyers so that your business emerges as the winner in the court!</p>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        @Html.Partial("HP/_LegalPracticeAreas", homePage)
 
         <!-- Call to Action-->
-        <section class="bg-accent text-center">
-            <section class="section parallax-container" data-parallax-img="../images/parallax-4.jpg">
-                <div class="parallax-content parallax-light">
-                    <div class="container section-md">
-                        <h2 class="heading-decorated">Sign Up for Your <br class="d-none d-md-block"> FREE Legal Consultation</h2><a class="button button-gray-light-outline" href="book-an-appointment.html">BOOK AN APPOINTMENT</a>
-                    </div>
-                </div>
-            </section>
-        </section>
+        @Html.Partial("HP/_SignUp", homePage)
 
         <!-- Quotes-->
         <section class="section-md bg-default text-center">
@@ -267,20 +219,7 @@
         </section>
 
         <!-- Some Of Our Clients-->
-        <section class="section-md bg-gray-lighter text-center">
-            <div class="container">
-                <h3 class="heading-decorated">Some Of Our Clients</h3>
-                <!-- Owl Carousel-->
-                <div class="owl-carousel owl-carousel_centered text-center" data-autoplay="true" data-items="1" data-sm-items="2" data-md-items="4" data-lg-items="5" data-xl-items="6" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true">
-                    <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-1-128x111.png" alt="" width="128" height="111" /></a></div>
-                    <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-2-129x102.png" alt="" width="129" height="102" /></a></div>
-                    <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-3-143x110.png" alt="" width="143" height="110" /></a></div>
-                    <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-4-129x86.png" alt="" width="129" height="86" /></a></div>
-                    <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-5-142x102.png" alt="" width="142" height="102" /></a></div>
-                    <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-6-134x122.png" alt="" width="134" height="122" /></a></div>
-                </div>
-            </div>
-        </section>
+        @Html.Partial("HP/_SomeOfOurClients", homePage)
 
         <!-- Winning is easier than you think...-->
         <section class="bg-accent-2">
@@ -314,165 +253,13 @@
         </section>
 
         <!-- Featured News-->
-        <section class="section-lg bg-default text-center">
-            <div class="container">
-                <h3 class="heading-decorated">Featured News</h3>
-                <div class="row row-50">
-                    <div class="col-md-6 col-lg-4">
-                        <!-- Post classic-->
-                        <article class="post-classic post-minimal">
-                            <img src="../images/post-classic-2-418x315.jpg" alt="" width="418" height="315" />
-                            <div class="post-classic-title">
-                                <h5><a href="standard-post.html">Can you be fined with $1600 for missing a license plate decal?</a></h5>
-                            </div>
-                            <div class="post-meta">
-                                <div class="group">
-                                    <a href="standard-post.html">
-                                        <time datetime="2017">Jan.20, 2016</time>
-                                    </a><a class="meta-author" href="standard-post.html">by Adam Smith</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!-- Post classic-->
-                        <article class="post-classic post-minimal">
-                            <img src="../images/post-classic-1-418x315.jpg" alt="" width="418" height="315" />
-                            <div class="post-classic-title">
-                                <h5><a href="nonstandard-post.html">2016 Texas Employment Law Update</a></h5>
-                            </div>
-                            <div class="post-meta">
-                                <div class="group">
-                                    <a href="nonstandard-post.html">
-                                        <time datetime="2017">Jan.20, 2016</time>
-                                    </a><a class="meta-author" href="nonstandard-post.html">by Adam Smith</a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                    <div class="col-md-6 col-lg-4">
-                        <!-- Post classic-->
-                        <article class="post-classic post-minimal">
-                            <img src="../images/post-classic-3-418x315.jpg" alt="" width="418" height="315" />
-                            <div class="post-classic-title">
-                                <h5><a href="standard-post.html">What the federal legal consequences of Florida's shooting wlll be?</a></h5>
-                            </div>
-                            <div class="post-meta">
-                                <div class="group">
-                                    <a href="standard-post.html">
-                                        <time datetime="2017">Jan.20, 2016</time>
-                                    </a><a class="meta-author" href="standard-post.html">by Adam Smith      </a>
-                                </div>
-                            </div>
-                        </article>
-                    </div>
-                </div>
-            </div>
-        </section>
+        @Html.Partial("HP/_FeaturedNews", homePage)
 
         <!-- Distinctive Recognition-->
-        <section class="bg-accent-2">
-            <section class="section parallax-container" data-parallax-img="../images/bg-image-2.jpg">
-                <div class="parallax-content parallax-light">
-                    <div class="section-md text-center">
-                        <div class="container">
-                            <h3 class="heading-decorated">Distinctive Recognition</h3>
-                            <!-- Owl Carousel-->
-                            <div class="owl-carousel owl-carousel_centered text-center" data-autoplay="true" data-items="1" data-sm-items="2" data-md-items="4" data-lg-items="5" data-stage-padding="15" data-loop="true" data-margin="30" data-mouse-drag="false" data-dots="true">
-                                <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-7-134x139.png" alt="" width="134" height="139" /></a></div>
-                                <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-8-162x83.png" alt="" width="162" height="83" /></a></div>
-                                <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-9-257x133.png" alt="" width="257" height="133" /></a></div>
-                                <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-10-115x116.png" alt="" width="115" height="116" /></a></div>
-                                <div class="item"><a class="link-transparent" href="#"><img src="../images/brand-11-265x62.png" alt="" width="265" height="62" /></a></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        </section>
+        @Html.Partial("HP/_DistinctiveRecognition", homePage)
 
         <!-- Page Footer -->
-        <section class="pre-footer-corporate bg-accent-2">
-            <div class="container">
-                <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
-                    <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3">
-                        <h6>About</h6>
-                        <p>Founded by a few seasoned New England lawyers back in 1999, today their small Law firm leads the race among other local firms in a percentage of cases won...But that kind of success comes in only when you input a lot of hard work, dedication, and excellent expertise in what you do...</p>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
-                        <h6>Our Services</h6>
-                        <ul class="list-xxs list-primary">
-                            <li><a href="single-practice.html">Labor & Employment Law</a></li>
-                            <li><a href="single-practice.html">Real Estate Law</a></li>
-                            <li><a href="single-practice.html">Personal Injury</a></li>
-                            <li><a href="single-practice.html">Business litigation & arbitratio</a></li>
-                            <li><a href="single-practice.html">Insurance Law</a></li>
-                            <li><a href="single-practice.html">Mergers & Acquisitions</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
-                        <h6>Recent Comments</h6>
-                        <ul class="list-xs">
-                            <li>
-                                <!-- Comment minimal-->
-                                <article class="comment-minimal">
-                                    <p class="comment-minimal__author">Jourdan Saint-Yves on</p>
-                                    <p class="comment-minimal__link"><a href="standard-post.html">How Couples Decide To Divorce</a></p>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- Comment minimal-->
-                                <article class="comment-minimal">
-                                    <p class="comment-minimal__author">Adam Smith on</p>
-                                    <p class="comment-minimal__link"><a href="standard-post.html">How Couples Decide To Divorce</a></p>
-                                </article>
-                            </li>
-                            <li>
-                                <!-- Comment minimal-->
-                                <article class="comment-minimal">
-                                    <p class="comment-minimal__author">Ann Smith on</p>
-                                    <p class="comment-minimal__link"><a href="../standard-post.html">What the federal legal consequences of Florida’s shooting wlll be?</a></p>
-                                </article>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
-                        <h6>Contacts</h6>
-                        <ul class="list-xs">
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>Address</dt>
-                                    <dd>4578 Marmora Road, Glasgow, D04 89GR</dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>Phones</dt>
-                                    <dd>
-                                        <ul class="list-semicolon">
-                                            <li><a href="callto:#">(800) 123-0045</a></li>
-                                            <li><a href="callto:#">(800) 123-0045</a></li>
-                                        </ul>
-                                    </dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>E-mail</dt>
-                                    <dd><a href="mailto:#">info@demolink.org</a></dd>
-                                </dl>
-                            </li>
-                            <li>
-                                <dl class="list-terms-minimal">
-                                    <dt>We are open</dt>
-                                    <dd>Mn-Fr: 10 am-8 pm</dd>
-                                </dl>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
+        @Html.Partial("_footer", homePage)
 
         <footer class="footer-corporate bg-secondary-1">
             <div class="container">

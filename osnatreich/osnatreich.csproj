@@ -3277,6 +3277,7 @@
     <Content Include="Views\Partials\HP\_LegalPracticeAreas.cshtml" />
     <Content Include="Views\Partials\HP\_SignUp.cshtml" />
     <Content Include="Views\Partials\HP\_SomeOfOurClients.cshtml" />
+    <Content Include="Views\Partials\_footer.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
