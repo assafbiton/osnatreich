@@ -46,6 +46,20 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// האם להציג בתפריט עליון: האם להציג בתפריט עליון
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("isTopNavigation")]
+		public bool IsTopNavigation => this.Value<bool>("isTopNavigation");
+
+		///<summary>
+		/// הצג רכיב: הצג רכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("showSwiperSlider")]
+		public bool ShowSwiperSlider => this.Value<bool>("showSwiperSlider");
+
+		///<summary>
 		/// לוגו אתר: לוגו אתר
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]

@@ -1,5 +1,8 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+            @{ 
 
+                var currentPageUrl = HttpContext.Current.Request.Url.AbsolutePath;
+            }
 <div class="rd-navbar-nav-wrap">
     <ul class="rd-navbar-nav">
         <li class="active">
