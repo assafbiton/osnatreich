@@ -3093,14 +3093,19 @@
     <Content Include="scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\FeaturedNews.generated.cs" />
+    <Compile Include="App_Data\Models\FeaturedNewsItem.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
+    <Compile Include="App_Data\Models\GlobalSettings.generated.cs" />
     <Compile Include="App_Data\Models\HomePage.generated.cs" />
     <Compile Include="App_Data\Models\HpWellcom.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\SeoConfig.generated.cs" />
     <Compile Include="App_Data\Models\SocialIcons.generated.cs" />
+    <Compile Include="App_Data\Models\SomeOfOurClient.generated.cs" />
+    <Compile Include="App_Data\Models\SomeOfOurClients.generated.cs" />
     <Compile Include="App_Data\Models\SwiperSlider.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -3278,6 +3283,9 @@
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\BlockList\Default.cshtml" />
+    <Content Include="Views\NavigationMenu.cshtml" />
+    <Content Include="Views\FeaturedNews.cshtml" />
+    <Content Include="Views\SomeOfOurClients.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

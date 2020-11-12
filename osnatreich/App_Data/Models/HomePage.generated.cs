@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>דף הבית</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IHpWellcom, ISeoConfig
+	public partial class HomePage : PublishedContentModel, IFeaturedNews, IHpWellcom, ISeoConfig, ISomeOfOurClient
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -88,6 +88,27 @@ namespace Umbraco.Web.PublishedModels
 		public IEnumerable<SwiperSlider> SwiperSlider => this.Value<IEnumerable<SwiperSlider>>("swiperSlider");
 
 		///<summary>
+		/// FeaturedNewsItems: פריטי חדשות
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("featuredNewsItems")]
+		public IEnumerable<FeaturedNewsItem> FeaturedNewsItems => FeaturedNews.GetFeaturedNewsItems(this);
+
+		///<summary>
+		/// isActive: האם רכיב פעיל
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("isFeaturedNewsActive")]
+		public bool IsFeaturedNewsActive => FeaturedNews.GetIsFeaturedNewsActive(this);
+
+		///<summary>
+		/// כותרת הרכיב: כותרת הרכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("newsTitleMain")]
+		public string NewsTitleMain => FeaturedNews.GetNewsTitleMain(this);
+
+		///<summary>
 		/// הצג רכיב: הצג רכיב
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
@@ -128,5 +149,26 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("seoPageTitle")]
 		public string SeoPageTitle => SeoConfig.GetSeoPageTitle(this);
+
+		///<summary>
+		/// לקוח: לקוח
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("customerItem")]
+		public IEnumerable<SomeOfOurClients> CustomerItem => SomeOfOurClient.GetCustomerItem(this);
+
+		///<summary>
+		/// customersTitle: כותרת הרכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("customersTitle")]
+		public string CustomersTitle => SomeOfOurClient.GetCustomersTitle(this);
+
+		///<summary>
+		/// האם רכיב פעיל: האם רכיב פעיל
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("isCustomerActive")]
+		public bool IsCustomerActive => SomeOfOurClient.GetIsCustomerActive(this);
 	}
 }

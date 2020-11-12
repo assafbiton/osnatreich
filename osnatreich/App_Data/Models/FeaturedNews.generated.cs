@@ -20,9 +20,26 @@ using Umbraco.ModelsBuilder.Umbraco;
 
 namespace Umbraco.Web.PublishedModels
 {
+	// Mixin Content Type with alias "featuredNews"
+	/// <summary>FeaturedNews</summary>
+	public partial interface IFeaturedNews : IPublishedContent
+	{
+		/// <summary>FeaturedNewsItems</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		IEnumerable<FeaturedNewsItem> FeaturedNewsItems { get; }
+
+		/// <summary>isActive</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		bool IsFeaturedNewsActive { get; }
+
+		/// <summary>כותרת הרכיב</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		string NewsTitleMain { get; }
+	}
+
 	/// <summary>FeaturedNews</summary>
 	[PublishedModel("featuredNews")]
-	public partial class FeaturedNews : PublishedContentModel
+	public partial class FeaturedNews : PublishedContentModel, IFeaturedNews
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -44,5 +61,38 @@ namespace Umbraco.Web.PublishedModels
 		{ }
 
 		// properties
+
+		///<summary>
+		/// FeaturedNewsItems: פריטי חדשות
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("featuredNewsItems")]
+		public IEnumerable<FeaturedNewsItem> FeaturedNewsItems => GetFeaturedNewsItems(this);
+
+		/// <summary>Static getter for FeaturedNewsItems</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		public static IEnumerable<FeaturedNewsItem> GetFeaturedNewsItems(IFeaturedNews that) => that.Value<IEnumerable<FeaturedNewsItem>>("featuredNewsItems");
+
+		///<summary>
+		/// isActive: האם רכיב פעיל
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("isFeaturedNewsActive")]
+		public bool IsFeaturedNewsActive => GetIsFeaturedNewsActive(this);
+
+		/// <summary>Static getter for isActive</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		public static bool GetIsFeaturedNewsActive(IFeaturedNews that) => that.Value<bool>("isFeaturedNewsActive");
+
+		///<summary>
+		/// כותרת הרכיב: כותרת הרכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("newsTitleMain")]
+		public string NewsTitleMain => GetNewsTitleMain(this);
+
+		/// <summary>Static getter for כותרת הרכיב</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		public static string GetNewsTitleMain(IFeaturedNews that) => that.Value<string>("newsTitleMain");
 	}
 }

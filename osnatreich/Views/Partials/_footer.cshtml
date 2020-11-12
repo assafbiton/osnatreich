@@ -1,4 +1,11 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+
+    var LogoImage = Model.Value<GlobalSettings>("siteLogo");
+
+}
+@LogoImage
 <section class="pre-footer-corporate bg-accent-2">
     <div class="container">
         <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">

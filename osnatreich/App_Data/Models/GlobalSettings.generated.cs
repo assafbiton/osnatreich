@@ -46,11 +46,32 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// נייד: נייד
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("siteCellPhone")]
+		public string SiteCellPhone => this.Value<string>("siteCellPhone");
+
+		///<summary>
+		/// כתובת דואר אלקטרוני: כתובת דואר אלקטרוני
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("siteEmail")]
+		public string SiteEmail => this.Value<string>("siteEmail");
+
+		///<summary>
 		/// לוגו אתר: לוגו אתר
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("siteLogo")]
 		public IPublishedContent SiteLogo => this.Value<IPublishedContent>("siteLogo");
+
+		///<summary>
+		/// טלפון: טלפון
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("sitePhone")]
+		public string SitePhone => this.Value<string>("sitePhone");
 
 		///<summary>
 		/// כותרת אתר: כותרת אתר
