@@ -3096,6 +3096,7 @@
     <Content Include="scripts\popper-utils.js.map" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="App_Data\Models\ContactUs.generated.cs" />
     <Compile Include="App_Data\Models\FeaturedNews.generated.cs" />
     <Compile Include="App_Data\Models\FeaturedNewsItem.generated.cs" />
     <Compile Include="App_Data\Models\File.generated.cs" />
@@ -3295,6 +3296,7 @@
     <Content Include="Views\SomeOfOurClients.cshtml" />
     <Content Include="Views\innerPage.cshtml" />
     <Content Include="Views\standardPost.cshtml" />
+    <Content Include="Views\contactUs.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

@@ -1,0 +1,56 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ContactUs>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "MasterPage.cshtml";
+}
+
+<section class="section-lg bg-default">
+    <div class="container">
+        <div class="row row-50">
+            <div class="col-md-5 col-lg-4">
+                <h3 class="heading-decorated">Contacts</h3>
+                <address class="address font-secondary">22 St. Black Road Raleigh, PA 34578</address>
+                <dl class="list-terms-minimal font-secondary">
+                    <dt>Tel</dt>
+                    <dd><a class="link-default" href="callto:#">555.123.2323</a></dd>
+                </dl>
+                <p>Opening Hours</p>
+                <dl class="list-terms-minimal">
+                    <dt>Monday – Friday</dt>
+                    <dd>9am-6pm</dd>
+                </dl>
+                <dl class="list-terms-minimal">
+                    <dt>Saturday</dt>
+                    <dd>10am-4pm</dd>
+                </dl>
+                <dl class="list-terms-minimal">
+                    <dt>Sunday</dt>
+                    <dd>10am-1pm</dd>
+                </dl><a class="button button-primary" href="book-an-appointment.html">BOOK AN APPOINTMENT</a>
+            </div>
+            <div class="col-md-7 col-lg-8">
+                <h3 class="heading-decorated">Get in Touch with Us</h3>
+                <!-- RD Mailform-->
+                <form class="rd-mailform rd-mailform_style-1" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
+                    <div class="form-wrap form-wrap_icon linear-icon-man">
+                        <input class="form-input" id="contact-name" type="text" name="name" data-constraints="">
+                        <label class="form-label" for="contact-name">Your name</label>
+                    </div>
+                    <div class="form-wrap form-wrap_icon linear-icon-envelope">
+                        <input class="form-input" id="contact-email" type="email" name="email" data-constraints="">
+                        <label class="form-label" for="contact-email">Your e-mail</label>
+                    </div>
+                    <div class="form-wrap form-wrap_icon linear-icon-telephone">
+                        <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="">
+                        <label class="form-label" for="contact-phone">Your phone</label>
+                    </div>
+                    <div class="form-wrap form-wrap_icon linear-icon-feather">
+                        <textarea class="form-input" id="contact-message" name="message" data-constraints=""></textarea>
+                        <label class="form-label" for="contact-message">Your message</label>
+                    </div>
+                    <button class="button button-primary" type="submit" onclick="">send</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
