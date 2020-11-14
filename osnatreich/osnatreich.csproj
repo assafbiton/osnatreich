@@ -394,6 +394,9 @@
     <Reference Include="Umbraco.ModelsBuilder, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Umbraco.ModelsBuilder.8.1.6\lib\net472\Umbraco.ModelsBuilder.dll</HintPath>
     </Reference>
+    <Reference Include="Umbraco.ModelsBuilder.Api, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Umbraco.ModelsBuilder.Api.8.1.6\lib\net472\Umbraco.ModelsBuilder.Api.dll</HintPath>
+    </Reference>
     <Reference Include="Umbraco.ModelsBuilder.Embedded, Version=8.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\UmbracoCms.Web.8.9.1\lib\net472\Umbraco.ModelsBuilder.Embedded.dll</HintPath>
     </Reference>
@@ -3101,12 +3104,16 @@
     <Compile Include="App_Data\Models\HomePage.generated.cs" />
     <Compile Include="App_Data\Models\HpWellcom.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
+    <Compile Include="App_Data\Models\InnerPage.generated.cs" />
     <Compile Include="App_Data\Models\Member.generated.cs" />
     <Compile Include="App_Data\Models\SeoConfig.generated.cs" />
     <Compile Include="App_Data\Models\SocialIcons.generated.cs" />
     <Compile Include="App_Data\Models\SomeOfOurClient.generated.cs" />
     <Compile Include="App_Data\Models\SomeOfOurClients.generated.cs" />
+    <Compile Include="App_Data\Models\StandardPost.generated.cs" />
     <Compile Include="App_Data\Models\SwiperSlider.generated.cs" />
+    <Compile Include="App_Data\Models\TopNavigation.generated.cs" />
+    <Compile Include="App_Data\Models\TopNavigationItem.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -3286,6 +3293,8 @@
     <Content Include="Views\NavigationMenu.cshtml" />
     <Content Include="Views\FeaturedNews.cshtml" />
     <Content Include="Views\SomeOfOurClients.cshtml" />
+    <Content Include="Views\innerPage.cshtml" />
+    <Content Include="Views\standardPost.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

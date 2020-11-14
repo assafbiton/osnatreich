@@ -1,11 +1,6 @@
-﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<IPublishedContent>
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using ContentModels = Umbraco.Web.PublishedModels;
-@{
 
-    var LogoImage = Model.Value<GlobalSettings>("siteLogo");
-
-}
-@LogoImage
 <section class="pre-footer-corporate bg-accent-2">
     <div class="container">
         <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
@@ -45,7 +40,7 @@
                         <!-- Comment minimal-->
                         <article class="comment-minimal">
                             <p class="comment-minimal__author">Ann Smith on</p>
-                            <p class="comment-minimal__link"><a href="../standard-post.html">What the federal legal consequences of Florida’s shooting wlll be?</a></p>
+                            <p class="comment-minimal__link"><a href="~/standard-post.html">What the federal legal consequences of Florida’s shooting wlll be?</a></p>
                         </article>
                     </li>
                 </ul>
@@ -64,7 +59,7 @@
                             <dt>Phones</dt>
                             <dd>
                                 <ul class="list-semicolon">
-                                    <li><a href="callto:#">(800) 123-0045</a></li>
+                                    <li><a href="callto:#"></a></li>
                                     <li><a href="callto:#">(800) 123-0045</a></li>
                                 </ul>
                             </dd>
@@ -73,7 +68,7 @@
                     <li>
                         <dl class="list-terms-minimal">
                             <dt>E-mail</dt>
-                            <dd><a href="mailto:#">info@demolink.org</a></dd>
+                            <dd><a href="mailto:">vfsdf</a></dd>
                         </dl>
                     </li>
                     <li>

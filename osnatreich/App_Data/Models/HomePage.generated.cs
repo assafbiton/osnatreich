@@ -22,7 +22,7 @@ namespace Umbraco.Web.PublishedModels
 {
 	/// <summary>דף הבית</summary>
 	[PublishedModel("homePage")]
-	public partial class HomePage : PublishedContentModel, IFeaturedNews, IHpWellcom, ISeoConfig, ISomeOfOurClient
+	public partial class HomePage : PublishedContentModel, IFeaturedNews, IHpWellcom, ISeoConfig, ISomeOfOurClient, ITopNavigation
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -170,5 +170,12 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("isCustomerActive")]
 		public bool IsCustomerActive => SomeOfOurClient.GetIsCustomerActive(this);
+
+		///<summary>
+		/// פריטי תפריט עליון: פריטי תפריט עליון
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("topnavItem")]
+		public IEnumerable<TopNavigationItem> TopnavItem => TopNavigation.GetTopnavItem(this);
 	}
 }
