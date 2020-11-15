@@ -6,117 +6,118 @@
 
     var direction = CurrentLang.DisplayName != "Hebrew" ? "ltr" : "rtl";
     direction = CurrentLang.DisplayName != "Arabic" ? "ltr" : "rtl";
-    var homePage = (HomePage)Model.AncestorOrSelf(1);
 
-}
-          
-<!DOCTYPE html>
-<html class="wide wow-animation" lang="@CurrentLang.TwoLetterISOLanguageName">
-<head>
-    <!-- Site Title-->
-    <title>Home</title>
-    @Html.Partial("_seoConfig", Model)
-    <meta name="format-detection" content="telephone=no">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
-    <!-- Stylesheets-->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:300,400,400italic,700%7CPlayfair+Display:400,700,700italic,900">
-    <link rel="stylesheet" href="~/css/bootstrap.css">
-    <link rel="stylesheet" href="~/css/style.css">
-    <link rel="stylesheet" href="~/css/fonts.css">
-    <!--[if lt IE 10]>
-    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
-    <script src="js/html5shiv.min.js"></script>
-        <![endif]-->
-</head>
-<body>
-    <div class="preloader">
-        <div class="preloader-body">
-            <div class="cssload-container">
-                <div class="cssload-speeding-wheel"></div>
+    var homePage = (HomePage)Model.AncestorOrSelf(1);
+    }
+     @{ 
+         var globalSettings = homePage?.Children<GlobalSettings>().FirstOrDefault();
+
+     }
+    <!DOCTYPE html>
+    <html class="wide wow-animation" lang="@CurrentLang.TwoLetterISOLanguageName">
+    <head>
+        <!-- Site Title-->
+        <title>Home</title>
+        @Html.Partial("_seoConfig", Model)
+        <meta name="format-detection" content="telephone=no">
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta charset="utf-8">
+        <link rel="icon" href="~/images/favicon.ico" type="image/x-icon">
+        <!-- Stylesheets-->
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Libre+Franklin:300,400,400italic,700%7CPlayfair+Display:400,700,700italic,900">
+        <link rel="stylesheet" href="~/css/bootstrap.css">
+        <link rel="stylesheet" href="~/css/style.css">
+        <link rel="stylesheet" href="~/css/fonts.css">
+        <!--[if lt IE 10]>
+        <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="../images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+        <script src="js/html5shiv.min.js"></script>
+            <![endif]-->
+    </head>
+    <body>
+        <div class="preloader">
+            <div class="preloader-body">
+                <div class="cssload-container">
+                    <div class="cssload-speeding-wheel"></div>
+                </div>
+                <p>Loading...</p>
             </div>
-            <p>Loading...</p>
         </div>
-    </div>
-    <!-- Page-->
-    <div class="page">
-        <header class="page-header">
-            <!-- RD Navbar-->
-            <div class="rd-navbar-wrap">
-                <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="153px" data-lg-stick-up-offset="153px" data-body-class="rd-navbar-default-linked">
-                    <!-- RD Navbar Top Panel-->
-                    <div class="rd-navbar-top-panel">
-                        <div class="rd-navbar-top-panel__main">
-                            <div class="rd-navbar-top-panel__toggle rd-navbar-fixed__element-1 rd-navbar-static--hidden" data-rd-navbar-toggle=".rd-navbar-top-panel__main"><span></span></div>
-                            <div class="rd-navbar-top-panel__content">
-                                <div class="rd-navbar-top-panel__left">
-                                    @Html.Partial("HP/_socialIcons", homePage)
-                                </div>
-                                <div class="rd-navbar-top-panel__right">
-                                    <ul class="rd-navbar-items-list">
-                                        <li>
-                                            <div class="unit flex-row align-items-center unit-spacing-xs">
-                                                <div class="unit__left"><span class="icon icon-xxs icon-primary linear-icon-telephone"></span></div>
-                                                <div class="unit__body">
-                                                    <ul class="list-semicolon">
-                                                        <li><a href="callto:#">(800) 123-0045</a></li>
-                                                        <li><a href="callto:#">(800) 123-0045</a></li>
-                                                    </ul>
+        <!-- Page-->
+        <div class="page">
+            <header class="page-header">
+                <!-- RD Navbar-->
+                <div class="rd-navbar-wrap">
+                    <nav class="rd-navbar" data-layout="rd-navbar-fixed" data-sm-layout="rd-navbar-fixed" data-sm-device-layout="rd-navbar-fixed" data-md-layout="rd-navbar-static" data-md-device-layout="rd-navbar-fixed" data-lg-device-layout="rd-navbar-static" data-lg-layout="rd-navbar-static" data-xl-device-layout="rd-navbar-static" data-xl-layout="rd-navbar-static" data-xxl-device-layout="rd-navbar-static" data-xxl-layout="rd-navbar-static" data-stick-up-clone="false" data-sm-stick-up="true" data-md-stick-up="true" data-lg-stick-up="true" data-md-stick-up-offset="153px" data-lg-stick-up-offset="153px" data-body-class="rd-navbar-default-linked">
+                        <!-- RD Navbar Top Panel-->
+                        <div class="rd-navbar-top-panel">
+                            <div class="rd-navbar-top-panel__main">
+                                <div class="rd-navbar-top-panel__toggle rd-navbar-fixed__element-1 rd-navbar-static--hidden" data-rd-navbar-toggle=".rd-navbar-top-panel__main"><span></span></div>
+                                <div class="rd-navbar-top-panel__content">
+                                    <div class="rd-navbar-top-panel__left">
+                                        @Html.Partial("HP/_socialIcons", homePage)
+                                    </div>
+                                    <div class="rd-navbar-top-panel__right">
+                                        <ul class="rd-navbar-items-list">
+                                            <li>
+                                                <div class="unit flex-row align-items-center unit-spacing-xs">
+                                                    <div class="unit__left"><span class="icon icon-xxs icon-primary linear-icon-telephone"></span></div>
+                                                    <div class="unit__body">
+                                                        <ul class="list-semicolon">
+                                                            <li><a href="callto:@(globalSettings.SitePhone)">@globalSettings.SitePhone</a></li>
+                                                            <li><a href="callto:@(globalSettings.SiteCellPhone)">@globalSettings.SiteCellPhone</a></li>
+                                                        </ul>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="unit flex-row align-items-center unit-spacing-xs">
-                                                <div class="unit__left"><span class="icon icon-xxs icon-primary linear-icon-clock3"></span></div>
-                                                <div class="unit__body">
-                                                    <p>Mn-Fr: 10 am-8 pm</p>
+                                            </li>
+                                            <li>
+                                                <div class="unit flex-row align-items-center unit-spacing-xs">
+                                                    <div class="unit__left"><span class="icon icon-xxs icon-primary linear-icon-clock3"></span></div>
+                                                    <div class="unit__body">
+                                                        <p>@globalSettings.OpeningHour</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </li>
-                                    </ul>
+                                            </li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="rd-navbar-inner">
-                        <!-- RD Navbar Panel-->
-                        <div class="rd-navbar-panel">
-                            <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
-                            <!-- RD Navbar Brand-->
-                            <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="@Html.Raw(homePage.SiteLogo != null ? homePage.SiteLogo.GetCropUrl() : "../images/logo-191x51.png")" alt="" width="191" height="51" /></a></div>
+                        <div class="rd-navbar-inner">
+                            <!-- RD Navbar Panel-->
+                            <div class="rd-navbar-panel">
+                                <button class="rd-navbar-toggle" data-rd-navbar-toggle=".rd-navbar-nav-wrap"><span></span></button>
+                                <!-- RD Navbar Brand-->
+                                <div class="rd-navbar-brand"><a class="brand-name" href="index.html"><img src="@Html.Raw(homePage.SiteLogo != null ? homePage.SiteLogo.GetCropUrl() : "../images/logo-191x51.png")" alt="" width="191" height="51" /></a></div>
+                            </div>
+                            <!-- RD Navbar Nav-->
+                            @Html.Partial("_topNavigation", homePage)
                         </div>
-                        <!-- RD Navbar Nav-->
-                        @Html.Partial("_topNavigation", homePage)
-                    </div>
-                </nav>
-            </div>
-        </header>
-
-        @RenderBody()
-        <!-- Swiper-->
-
-
-        <!-- Page Footer -->
-        @Html.Partial("_footer", homePage)
-
-        <footer class="footer-corporate bg-secondary-1">
-            <div class="container">
-                <div class="footer-corporate__inner">
-                    <a class="brand" href="../index.html"><img src="~/images/logo-inverse-191x51.png" alt="" width="191" height="51" /></a>
-                    <p class="rights"><span>Osnat Reich</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;All rights reserved.</span></p>
-                    <ul class="list-inline-xxs">
-                        @Html.Partial("HP/_socialIcons", homePage)
-                    </ul>
+                    </nav>
                 </div>
-            </div>
-        </footer>
-    </div>
-    <!-- Global Mailform Output-->
-    <div class="snackbars" id="form-output-global"></div>
-    <!-- Javascript-->
-    <script src="~/scripts/core.min.js"></script>
-    <script src="~/scripts/script.js"></script>
-</body>
+            </header>
+
+            @RenderBody()
+            <!-- Swiper-->
+            <!-- Page Footer -->
+            @Html.Partial("_footer", homePage)
+
+            <footer class="footer-corporate bg-secondary-1">
+                <div class="container">
+                    <div class="footer-corporate__inner">
+                        <a class="brand" href="~/"><img src="~/images/logo-inverse-191x51.png" alt="" width="191" height="51" /></a>
+                        <p class="rights"><span>Osnat Reich</span><span>&copy;&nbsp;</span><span class="copyright-year"></span><span>.&nbsp;All rights reserved.</span></p>
+                        <ul class="list-inline-xxs">
+                            @Html.Partial("HP/_socialIcons", homePage)
+                        </ul>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- Global Mailform Output-->
+        <div class="snackbars" id="form-output-global"></div>
+        <!-- Javascript-->
+        <script src="~/scripts/core.min.js"></script>
+        <script src="~/scripts/script.js"></script>
+    </body>
 </html>

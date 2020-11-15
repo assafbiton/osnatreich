@@ -1,14 +1,19 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
 @using ContentModels = Umbraco.Web.PublishedModels;
+@{ 
 
+    var globalSettings = Model?.Children<GlobalSettings>().FirstOrDefault();
+
+}
+ 
 <section class="pre-footer-corporate bg-accent-2">
     <div class="container">
         <div class="row justify-content-sm-center justify-content-lg-start row-30 row-md-60">
             <div class="col-sm-10 col-md-6 col-lg-10 col-xl-3">
-                <h6>About</h6>
-                <p>Founded by a few seasoned New England lawyers back in 1999, today their small Law firm leads the race among other local firms in a percentage of cases won...But that kind of success comes in only when you input a lot of hard work, dedication, and excellent expertise in what you do...</p>
+                <h6>@Umbraco.GetDictionaryValue("About")</h6>
+                <p>@globalSettings.ShortAboutDescription</p>
             </div>
-            <div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
+            @*<div class="col-sm-10 col-md-6 col-lg-3 col-xl-3">
                 <h6>Our Services</h6>
                 <ul class="list-xxs list-primary">
                     <li><a href="single-practice.html">Labor & Employment Law</a></li>
@@ -18,63 +23,63 @@
                     <li><a href="single-practice.html">Insurance Law</a></li>
                     <li><a href="single-practice.html">Mergers & Acquisitions</a></li>
                 </ul>
-            </div>
-            <div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
+            </div>*@
+            <!--<div class="col-sm-10 col-md-6 col-lg-5 col-xl-3">
                 <h6>Recent Comments</h6>
                 <ul class="list-xs">
-                    <li>
+                    <li>-->
                         <!-- Comment minimal-->
-                        <article class="comment-minimal">
+                        <!--<article class="comment-minimal">
                             <p class="comment-minimal__author">Jourdan Saint-Yves on</p>
                             <p class="comment-minimal__link"><a href="standard-post.html">How Couples Decide To Divorce</a></p>
                         </article>
                     </li>
-                    <li>
+                    <li>-->
                         <!-- Comment minimal-->
-                        <article class="comment-minimal">
+                        <!--<article class="comment-minimal">
                             <p class="comment-minimal__author">Adam Smith on</p>
                             <p class="comment-minimal__link"><a href="standard-post.html">How Couples Decide To Divorce</a></p>
                         </article>
                     </li>
-                    <li>
+                    <li>-->
                         <!-- Comment minimal-->
-                        <article class="comment-minimal">
+                        <!--<article class="comment-minimal">
                             <p class="comment-minimal__author">Ann Smith on</p>
                             <p class="comment-minimal__link"><a href="~/standard-post.html">What the federal legal consequences of Florida’s shooting wlll be?</a></p>
                         </article>
                     </li>
                 </ul>
-            </div>
+            </div>-->
             <div class="col-sm-10 col-md-6 col-lg-4 col-xl-3">
-                <h6>Contacts</h6>
+                <h6>@Umbraco.GetDictionaryValue("Contacts")</h6>
                 <ul class="list-xs">
                     <li>
                         <dl class="list-terms-minimal">
-                            <dt>Address</dt>
-                            <dd>4578 Marmora Road, Glasgow, D04 89GR</dd>
+                            <dt>@Umbraco.GetDictionaryValue("address")</dt>
+                            <dd> @globalSettings.SiteAddress</dd>
                         </dl>
                     </li>
                     <li>
                         <dl class="list-terms-minimal">
-                            <dt>Phones</dt>
+                            <dt>@Umbraco.GetDictionaryValue("phones")</dt>
                             <dd>
                                 <ul class="list-semicolon">
-                                    <li><a href="callto:#"></a></li>
-                                    <li><a href="callto:#">(800) 123-0045</a></li>
+                                    <li><a href="callto:@(globalSettings.SiteCellPhone)">@globalSettings.SiteCellPhone</a></li>
+                                    <li><a href="callto:@(globalSettings.SitePhone)">@globalSettings.SitePhone</a></li>
                                 </ul>
                             </dd>
                         </dl>
                     </li>
                     <li>
                         <dl class="list-terms-minimal">
-                            <dt>E-mail</dt>
-                            <dd><a href="mailto:">vfsdf</a></dd>
+                            <dt>@Umbraco.GetDictionaryValue("email")</dt>
+                            <dd><a href="mailto:@(globalSettings.SiteEmail)">@globalSettings.SiteEmail</a></dd>
                         </dl>
                     </li>
                     <li>
                         <dl class="list-terms-minimal">
-                            <dt>We are open</dt>
-                            <dd>Mn-Fr: 10 am-8 pm</dd>
+                            <dt>@Umbraco.GetDictionaryValue("Weareopen")</dt>
+                            <dd>@globalSettings.OpeningHour</dd>
                         </dl>
                     </li>
                 </ul>

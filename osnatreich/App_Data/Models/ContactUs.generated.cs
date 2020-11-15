@@ -46,6 +46,27 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// תוכן הדף: תוכן הדף
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("pageContent")]
+		public IHtmlString PageContent => this.Value<IHtmlString>("pageContent");
+
+		///<summary>
+		/// תיאור קצר: תיאור קצר
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("pageShortDescription")]
+		public string PageShortDescription => this.Value<string>("pageShortDescription");
+
+		///<summary>
+		/// כותרת הדף: כותרת הדף
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("pageTitle")]
+		public string PageTitle => this.Value<string>("pageTitle");
+
+		///<summary>
 		/// IndexNoFollow: IndexNoFollow
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]

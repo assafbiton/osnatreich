@@ -46,6 +46,27 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// שעות פתיחה: שעות פתיחה
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("openingHour")]
+		public string OpeningHour => this.Value<string>("openingHour");
+
+		///<summary>
+		/// shortAboutDescription: אודות מקוצר
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("shortAboutDescription")]
+		public string ShortAboutDescription => this.Value<string>("shortAboutDescription");
+
+		///<summary>
+		/// כתובת העסק: כתובת העסק
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("siteAddress")]
+		public string SiteAddress => this.Value<string>("siteAddress");
+
+		///<summary>
 		/// נייד: נייד
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]

@@ -408,8 +408,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\TEMP\ClientDependency\DESKTOP-JA4NIDB-f8a42db51a8d0f59ae85884d91c65cd5-map.xml" />
-    <Content Include="App_Data\TEMP\DistCache\LMW3SVC2ROOT-lastsynced.txt" />
     <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.controller.js" />
     <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.css" />
     <Content Include="App_Plugins\FontAwesomeIconFinder\fontawesomeiconfinder.html" />
@@ -3083,7 +3081,6 @@
     <Content Include="Umbraco\Views\users\views\overlays\remove.html" />
     <Content Include="Umbraco\Views\users\views\users\users.html" />
     <Content Include="Umbraco\Views\users\views\user\details.html" />
-    <Content Include="Web.config" />
     <Content Include="scripts\umd\popper.min.js.map" />
     <Content Include="scripts\umd\popper.js.map" />
     <Content Include="scripts\umd\popper.js.flow" />
@@ -3126,21 +3123,6 @@
     <Content Include="App_Plugins\ModelsBuilder\package.manifest" />
     <Content Include="App_Data\Logs\UmbracoTraceLog.DESKTOP-JA4NIDB.20201108.json" />
     <Content Include="App_Data\packages\installedPackages.config" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_50c5f94545774ccdb2b4cb45d20599dc.cdJ" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_9ca7e804cff64fa1a60bb5a98b63b980.cdC" />
-    <Content Include="App_Data\TEMP\ClientDependency\1_e4a1324e7d2748cf804ceafb8300dbff.cdJ" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\External\segments_1" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Internal\segments_1" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments.gen" />
-    <Content Include="App_Data\TEMP\ExamineIndexes\Members\segments_1" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Content.db" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Content.tlog" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Media.db" />
-    <Content Include="App_Data\TEMP\NuCache\NuCache.Media.tlog" />
-    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-JA4NIDB.hash" />
-    <Content Include="App_Data\TEMP\TypesCache\umbraco-types.DESKTOP-JA4NIDB.list" />
     <Content Include="images\Thumbs.db" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.eot" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.ttf" />
@@ -3297,20 +3279,13 @@
     <Content Include="Views\innerPage.cshtml" />
     <Content Include="Views\standardPost.cshtml" />
     <Content Include="Views\contactUs.cshtml" />
-    <None Include="Web.Debug.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
-    <None Include="Web.Release.config">
-      <DependentUpon>Web.config</DependentUpon>
-    </None>
+    <Content Include="Views\globalSettings.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.Analyzers.dll" />
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.2.6.1\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\TEMP\Install\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <TypeScriptCompile Include="scripts\index.d.ts" />
   </ItemGroup>

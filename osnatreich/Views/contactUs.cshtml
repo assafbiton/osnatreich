@@ -1,54 +1,94 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.ContactUs>
 @using ContentModels = Umbraco.Web.PublishedModels;
+@using System;
+@using System.Linq;
+@using System.Net.Mail;
+@using System.Text;
 @{
     Layout = "MasterPage.cshtml";
+    var homePage = (HomePage)Model.AncestorOrSelf(1);
+    var globalSettings = homePage?.Children<GlobalSettings>().FirstOrDefault();
+
+    if (IsPost)
+    {
+        string name = Request["fName"];
+        string email = Request["email"];
+        string telephone = Request["phone"];
+        string message = Request["message"];
+        try
+        {
+            MailMessage mail = new MailMessage();
+
+            mail.From = new MailAddress("osnatreich@live.com");
+            mail.To.Add("osnatreich@live.com");
+            mail.Subject = "צור קשר";
+            mail.IsBodyHtml = true;
+            StringBuilder sb = new StringBuilder();
+            sb.Append("<table style='direction:rtl;'>");
+            sb.Append("<tr><td colspan='2'>צור קשר מהאתר</td></tr>");
+            sb.Append("<tr><td>שם מלא</td><td>" + name + "</td></tr>");
+            sb.Append("<tr><td>טלפון</td><td>" + telephone + "</td></tr>");
+            sb.Append("<tr><td>Email</td><td>" + email + "</td></tr>");
+            sb.Append("<tr><td>מתעניין ב</td><td>" + message + "</td></tr>");
+            sb.Append("</table>");
+            mail.Body = sb.ToString();
+
+
+            SmtpClient smtp = new SmtpClient();
+
+            smtp.Send(mail);
+
+
+        }
+        catch (Exception ex)
+        {
+            // Response.Write(ex.ToString());
+        }
+        <text>
+            <div style="color:#CC6200; font-weight:bold;">@Umbraco.GetDictionaryValue("SendDetailsSuccess")</div>
+        </text>
+    }
 }
 
 <section class="section-lg bg-default">
-    <div class="container">
+    <div class="container ">
         <div class="row row-50">
             <div class="col-md-5 col-lg-4">
-                <h3 class="heading-decorated">Contacts</h3>
-                <address class="address font-secondary">22 St. Black Road Raleigh, PA 34578</address>
+                <h3 class="heading-decorated">@Model.PageTitle</h3>
+                <address class="address font-secondary">@globalSettings.SiteAddress</address>
                 <dl class="list-terms-minimal font-secondary">
-                    <dt>Tel</dt>
-                    <dd><a class="link-default" href="callto:#">555.123.2323</a></dd>
+                    <dt>@Umbraco.GetDictionaryValue("phones")</dt>
+                    <dd><a class="link-default" href="callto:@(globalSettings.SiteCellPhone)">@globalSettings.SiteCellPhone</a></dd>
                 </dl>
-                <p>Opening Hours</p>
+                <p>@Umbraco.GetDictionaryValue("Weareopen")</p>
                 <dl class="list-terms-minimal">
-                    <dt>Monday – Friday</dt>
-                    <dd>9am-6pm</dd>
+                    <dt>@globalSettings.OpeningHour</dt>
                 </dl>
-                <dl class="list-terms-minimal">
-                    <dt>Saturday</dt>
-                    <dd>10am-4pm</dd>
-                </dl>
-                <dl class="list-terms-minimal">
-                    <dt>Sunday</dt>
-                    <dd>10am-1pm</dd>
-                </dl><a class="button button-primary" href="book-an-appointment.html">BOOK AN APPOINTMENT</a>
+
             </div>
-            <div class="col-md-7 col-lg-8">
-                <h3 class="heading-decorated">Get in Touch with Us</h3>
+            <div class="col-md-7 col-lg-8 ContactUs">
+                <h3 class="heading-decorated">@Umbraco.GetDictionaryValue("GetinTouchwithUs")</h3>
                 <!-- RD Mailform-->
-                <form class="rd-mailform rd-mailform_style-1" data-form-output="form-output-global" data-form-type="contact" method="post" action="bat/rd-mailform.php">
-                    <div class="form-wrap form-wrap_icon linear-icon-man">
-                        <input class="form-input" id="contact-name" type="text" name="name" data-constraints="">
-                        <label class="form-label" for="contact-name">Your name</label>
+                <form class="rd-mailform_style-1"  method="post" >
+                    <div >
+                        <div class="form-wrap form-wrap_icon linear-icon-man">
+                            <input class="form-input" id="contact-name" type="text" name="fName" data-constraints="" required>
+                            <label class="form-label" for="contact-name">@Umbraco.GetDictionaryValue("Your name")</label>
+                        </div>
+                        <div class="form-wrap form-wrap_icon linear-icon-envelope">
+                            <input class="form-input" id="contact-email" type="email" name="email" data-constraints="" required>
+                            <label class="form-label" for="contact-email">@Umbraco.GetDictionaryValue("Your e-mail")</label>
+                        </div>
+                        <div class="form-wrap form-wrap_icon linear-icon-telephone">
+                            <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="" required maxlength="15">
+                            <label class="form-label" for="contact-phone">@Umbraco.GetDictionaryValue("Your phone")</label>
+                        </div>
+                        <div class="form-wrap form-wrap_icon linear-icon-feather">
+                            <textarea class="form-input" id="contact-message" name="message" data-constraints="" maxlength="255"></textarea>
+                            <label class="form-label" for="contact-message">@Umbraco.GetDictionaryValue("Your message")</label>
+                        </div>
+                        <button class="button button-primary" type="submit" >@Umbraco.GetDictionaryValue("send")</button>
                     </div>
-                    <div class="form-wrap form-wrap_icon linear-icon-envelope">
-                        <input class="form-input" id="contact-email" type="email" name="email" data-constraints="">
-                        <label class="form-label" for="contact-email">Your e-mail</label>
-                    </div>
-                    <div class="form-wrap form-wrap_icon linear-icon-telephone">
-                        <input class="form-input" id="contact-phone" type="text" name="phone" data-constraints="">
-                        <label class="form-label" for="contact-phone">Your phone</label>
-                    </div>
-                    <div class="form-wrap form-wrap_icon linear-icon-feather">
-                        <textarea class="form-input" id="contact-message" name="message" data-constraints=""></textarea>
-                        <label class="form-label" for="contact-message">Your message</label>
-                    </div>
-                    <button class="button button-primary" type="submit" onclick="">send</button>
                 </form>
             </div>
         </div>
