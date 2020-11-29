@@ -11,13 +11,14 @@
                     <div class="col-md-6 col-lg-4">
                         <!-- Post classic-->
                         <article class="post-classic post-minimal">
-                            <img src="@Html.Raw(item.NewsImage != null ? item.NewsImage.GetCropUrl() : "../images/post-classic-2-418x315.jpg")" alt="" width="418" height="315" />
-                            <div class="post-classic-title">
-                                <h5><a href="standard-post.html">@item.NewsTitle</a></h5>
-                                <h8>@item.NewsDescription</h8>
-                            </div>
-                    
-                        </article>
+                            <a href="@Html.Raw(item.NewsUrl != null?item.NewsUrl.Url:"")">
+                                <img src="@Html.Raw(item.NewsImage != null ? item.NewsImage.GetCropUrl() : "../images/post-classic-2-418x315.jpg")" alt="" width="418" height="315" /></a>
+                                <div class="post-classic-title">
+                                    <h5><a href="@Html.Raw(item.NewsUrl != null?item.NewsUrl.Url:"")">@item.NewsTitle</a></h5>
+                                    <h8>@item.NewsDescription</h8>
+                                </div>
+
+</article>
                     </div>
                }
             </div>
