@@ -46,6 +46,34 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// תמונת רקע: תמונת רקע
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("hiringUsBackImage")]
+		public IPublishedContent HiringUsBackImage => this.Value<IPublishedContent>("hiringUsBackImage");
+
+		///<summary>
+		/// האם רכיב פעיל: האם רכיב פעיל
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("hiringUsIsActive")]
+		public bool HiringUsIsActive => this.Value<bool>("hiringUsIsActive");
+
+		///<summary>
+		/// הוספת שירות: הוספת שירות
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("hiringUsItem")]
+		public IEnumerable<HiringUsItem> HiringUsItem => this.Value<IEnumerable<HiringUsItem>>("hiringUsItem");
+
+		///<summary>
+		/// כותרת הרכיב: כותרת הרכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("hiringUsTitle")]
+		public string HiringUsTitle => this.Value<string>("hiringUsTitle");
+
+		///<summary>
 		/// האם להציג בתפריט עליון: האם להציג בתפריט עליון
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
@@ -86,6 +114,27 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
 		[ImplementPropertyType("swiperSlider")]
 		public IEnumerable<SwiperSlider> SwiperSlider => this.Value<IEnumerable<SwiperSlider>>("swiperSlider");
+
+		///<summary>
+		/// האם להציג רכיב: האם להציג רכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("testimonialsIsActive")]
+		public bool TestimonialsIsActive => this.Value<bool>("testimonialsIsActive");
+
+		///<summary>
+		/// הוסף פריט: הוסף פריט
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("testimonialsItem")]
+		public IEnumerable<TestimonialsItem> TestimonialsItem => this.Value<IEnumerable<TestimonialsItem>>("testimonialsItem");
+
+		///<summary>
+		/// כותרת הרכיב: כותרת הרכיב
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.1.6")]
+		[ImplementPropertyType("testimonialsTitle")]
+		public string TestimonialsTitle => this.Value<string>("testimonialsTitle");
 
 		///<summary>
 		/// FeaturedNewsItems: פריטי חדשות

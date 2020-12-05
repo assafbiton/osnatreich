@@ -639,6 +639,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="css\bootstrap.css" />
+    <Content Include="css\fontawesomeiconfinder.css" />
     <Content Include="css\fonts.css" />
     <Content Include="css\style.css" />
     <Content Include="fonts\bootstrap\glyphicons-halflings-regular.svg" />
@@ -3306,6 +3307,7 @@
     <Content Include="scripts\popper.js.map" />
     <Content Include="scripts\popper-utils.min.js.map" />
     <Content Include="scripts\popper-utils.js.map" />
+    <Content Include="Views\Partials\HP\_ourServices.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Data\Models\ContactUs.generated.cs" />
@@ -3314,6 +3316,7 @@
     <Compile Include="App_Data\Models\File.generated.cs" />
     <Compile Include="App_Data\Models\Folder.generated.cs" />
     <Compile Include="App_Data\Models\GlobalSettings.generated.cs" />
+    <Compile Include="App_Data\Models\HiringUsItem.generated.cs" />
     <Compile Include="App_Data\Models\HomePage.generated.cs" />
     <Compile Include="App_Data\Models\HpWellcom.generated.cs" />
     <Compile Include="App_Data\Models\Image.generated.cs" />
@@ -3325,6 +3328,7 @@
     <Compile Include="App_Data\Models\SomeOfOurClients.generated.cs" />
     <Compile Include="App_Data\Models\StandardPost.generated.cs" />
     <Compile Include="App_Data\Models\SwiperSlider.generated.cs" />
+    <Compile Include="App_Data\Models\TestimonialsItem.generated.cs" />
     <Compile Include="App_Data\Models\TopNavigation.generated.cs" />
     <Compile Include="App_Data\Models\TopNavigationItem.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

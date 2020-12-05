@@ -1,0 +1,32 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<HomePage>
+@if (Model.HiringUsIsActive)
+{
+<section class="section parallax-container bg-accent-2 text-center" data-parallax-img="@Html.Raw(Model.HiringUsBackImage != null ? Model.HiringUsBackImage.GetCropUrl() : "../images/parallax-1.jpg")">
+    <div class="parallax-content">
+        <div class="section-md text-center">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-md-7 col-xl-6">
+                        <h3 class="heading-decorated">@Model.HiringUsTitle</h3>
+                    </div>
+                </div>
+                <div class="row row-50 offset-top-1">
+                    @foreach (var item in Model.HiringUsItem)
+                    {
+                       <div class="col-md-6 col-xl-3">
+                            <!-- Blurb tiny-->
+                            <article class="blurb-tiny blurb-tiny_centered ">
+                                <div class="blurb-tiny__icon fa-2x" data-class="@item.HiringUsItemIcon" style="padding-top:5px;">
+                                    <i class="@item.HiringUsItemIcon myclass fa-2x" data-x="mydata"></i>
+                                </div>
+                                <h5 class="blurb-tiny__title">@item.Title</h5>
+                                <p>@item.Description</p>
+                            </article>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+}
