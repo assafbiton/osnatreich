@@ -4,8 +4,7 @@
     Layout = null;
     var CurrentLang = @System.Threading.Thread.CurrentThread.CurrentUICulture;
 
-    var direction = CurrentLang.DisplayName != "Hebrew" ? "ltr" : "rtl";
-    direction = CurrentLang.DisplayName != "Arabic" ? "ltr" : "rtl";
+    var direction = CurrentLang.DisplayName.ToLower() != "hebrew" ? "ltr" : "rtl";
 
     var homePage = (HomePage)Model.AncestorOrSelf(1);
     }
@@ -14,7 +13,7 @@
 
      }
     <!DOCTYPE html>
-    <html class="wide wow-animation" lang="@CurrentLang.TwoLetterISOLanguageName">
+    <html class="wide wow-animation" lang="@CurrentLang.TwoLetterISOLanguageName" dir="@direction">
     <head>
         <!-- Site Title-->
         <title>@homePage.SeoPageTitle</title>
@@ -35,7 +34,7 @@
     <script src="js/html5shiv.min.js"></script>
         <![endif]-->
     </head>
-    <body>
+    <body dir="@direction">
         <div class="preloader">
             <div class="preloader-body">
                 <div class="cssload-container">

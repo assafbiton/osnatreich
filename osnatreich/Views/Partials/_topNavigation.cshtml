@@ -22,7 +22,7 @@
                         @foreach (var subItem in item.TopnavigationsubItem)
                         {
                             <li>
-                                <a href="@Html.Raw(subItem.TopNavigationItemUrl!=null? subItem.TopNavigationItemUrl.Url:"" )">@subItem.TopNavigationItemUrl.Name</a>
+                                <a href="@Html.Raw(subItem.TopNavigationItemUrl!=null? subItem.TopNavigationItemUrl.Url:"" )">@Html.Raw(subItem.TopNavigationItemUrl != null ? subItem.TopNavigationItemUrl.Name : "")</a>
                                 @if (subItem.TopnavigationsubItem.Count() > 0)
                                 {
                                     <ul class="rd-navbar-dropdown">
